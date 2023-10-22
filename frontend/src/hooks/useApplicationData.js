@@ -32,6 +32,7 @@ const useApplicationData = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const updateToFavPhotoIds = (photoId) => {
+
     dispatch({ type: 'UPDATE_FAV_PHOTO_IDS', photoId });
   };
 

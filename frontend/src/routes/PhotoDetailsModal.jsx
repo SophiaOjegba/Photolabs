@@ -8,6 +8,15 @@ const PhotoDetailsModal = (props) => {
   const { photoData, handleFavoriteToggle, favoritePhotos, handleCloseModal } =
     props;
 
+    const toggleFavorite = () => {
+      if (handleFavoriteToggle) {
+        handleFavoriteToggle(photoData.id);
+      }
+    };
+   
+      const isFavorite = favoritePhotos.includes(photoData.id)
+    
+
   return (
     <div className="photo-details-modal">
       <button
@@ -17,10 +26,10 @@ const PhotoDetailsModal = (props) => {
         <img src={closeSymbol} alt="close symbol" />
       </button>
       {photoData ? (
-        <div className="photo-details-modal__image">
+        <div >
           <FavIconButton
-            isFavorite={favoritePhotos}
-            onToggle={handleFavoriteToggle}
+            isFavorite={isFavorite}
+            onToggle={toggleFavorite}
           />
           <img
             src={photoData.urls.regular}
