@@ -1,7 +1,10 @@
-# react-photolabs
-The PhotoLabs project for the Web Development React course programming.
-
 # Photolabs
+The PhotoLabs project is a React-based single-page application designed for viewing stock photos in various contexts. The project will be developed in four phases, starting with the construction of isolated components and gradually progressing towards managing application state, integrating an API for data retrieval, and implementing advanced React patterns.
+
+# Screenshots
+## Home Page
+
+
 
 ## Setup
 

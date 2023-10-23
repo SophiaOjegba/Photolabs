@@ -31,10 +31,11 @@ const PhotoDetailsModal = (props) => {
             isFavorite={isFavorite}
             onToggle={toggleFavorite}
           />
+          <div >
           <img
             src={photoData.urls.regular}
             className="photo-details-modal__image"
-          />
+          /></div>
           <h3 className="photo-details-modal__header">Similar Photos</h3>
           <div className="photo-details-modal__images">
             {photoData.similar_photos ? (
