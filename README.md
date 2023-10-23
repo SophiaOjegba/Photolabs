@@ -3,8 +3,9 @@ The PhotoLabs project is a React-based single-page application designed for view
 
 # Screenshots
 ## Home Page
-
-
+![HomePage](https://github.com/SophiaOjegba/Photolabs/blob/main/frontend/docs/HomePage.png?raw=true)
+## Modal Page
+![ModalPage](https://github.com/SophiaOjegba/Photolabs/blob/main/frontend/docs/Modal.png?raw=true)
 
 ## Setup
 
