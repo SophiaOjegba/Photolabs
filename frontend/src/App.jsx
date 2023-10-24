@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import axios from "axios";
 import "./App.scss";
 import HomeRoute from "routes/HomeRoute";
 
@@ -10,15 +11,29 @@ const App = () => {
     state,
     updateToFavPhotoIds,
     onClosePhotoDetailsModal,
-    onOpenPhotoDetailsModal
+    onOpenPhotoDetailsModal,
+    setApplicationData,
+    setTopicPhotos
   } = useApplicationData();
 
+
+  useEffect(() => {
+    const topicsUrl = "/api/topics";
+    const photosUrl = "/api/photos";
+    Promise.all([axios.get(topicsUrl), axios.get(photosUrl)])
+      .then((allResponse) => {
+        const [topics, photos] = allResponse;
+        setApplicationData(topics.data, photos.data)
+      })
+      .catch((error) => console.log("An error occured", error));
+  }, []);
 
   return (
     <div className="App">
       <HomeRoute
         topics={state.topicData}
-        photoData={state.photoData}
+        photos={state.photoData}
+        setTopicPhotos = {setTopicPhotos}
         handlePhotoClick={onOpenPhotoDetailsModal}
         handleFavoriteToggle={updateToFavPhotoIds}
         favoritePhotos={state.favoritePhotos}

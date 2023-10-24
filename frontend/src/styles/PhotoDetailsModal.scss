@@ -30,8 +30,9 @@
 }
 
 .photo-details-modal__image {
- max-width: 95%;
-
+ max-width: 100%;
+ display: flex;
+flex-grow: 1;
 }
 
 .photo-details-modal__top-bar {

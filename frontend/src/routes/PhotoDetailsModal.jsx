@@ -31,7 +31,7 @@ const PhotoDetailsModal = (props) => {
             isFavorite={isFavorite}
             onToggle={toggleFavorite}
           />
-          <div >
+          <div className="photo-details-modal__image">
           <img
             src={photoData.urls.regular}
             className="photo-details-modal__image"

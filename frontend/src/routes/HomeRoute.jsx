@@ -8,6 +8,7 @@ const HomeRoute = (props) => {
   const {
     topics,
     photos,
+    setTopicPhotos,
     handlePhotoClick,
     handleFavoriteToggle,
     favoritePhotos,
@@ -15,7 +16,7 @@ const HomeRoute = (props) => {
 
   return (
     <div className="home-route">
-      <TopNavigation topics={topics} favoritePhotos={favoritePhotos} />
+      <TopNavigation topics={topics} favoritePhotos={favoritePhotos} setTopicPhotos={setTopicPhotos} />
       <PhotoList
         photos={photos}
         onFavoriteToggle={handleFavoriteToggle}
