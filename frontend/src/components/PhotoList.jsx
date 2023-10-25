@@ -6,7 +6,6 @@ import PhotoListItem from "./PhotoListItem";
 const PhotoList = (props) => {
   const { photos, onFavoriteToggle, favoritePhotos, handlePhotoClick } = props;
 
-
   return (
     <ul className="photo-list">
       {photos.map((data, index) => (

@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import "./App.scss";
 import HomeRoute from "routes/HomeRoute";
-
 import PhotoDetailsModal from "routes/PhotoDetailsModal";
 import useApplicationData from "../src/hooks/useApplicationData";
 
@@ -13,7 +12,8 @@ const App = () => {
     onClosePhotoDetailsModal,
     onOpenPhotoDetailsModal,
     setApplicationData,
-    setTopicPhotos
+    setTopicPhotos,
+    searchPhotos
   } = useApplicationData();
 
 
@@ -34,6 +34,7 @@ const App = () => {
         topics={state.topicData}
         photos={state.photoData}
         setTopicPhotos = {setTopicPhotos}
+        searchPhotos = {searchPhotos}
         handlePhotoClick={onOpenPhotoDetailsModal}
         handleFavoriteToggle={updateToFavPhotoIds}
         favoritePhotos={state.favoritePhotos}

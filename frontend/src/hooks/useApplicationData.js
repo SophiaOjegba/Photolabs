@@ -1,3 +1,4 @@
+import photos from "mocks/photos";
 import { useReducer } from "react";
 
 const initialState = {
@@ -7,6 +8,7 @@ const initialState = {
   photoData: [],
   topicData: [],
   photosByTopic: [],
+  searchPhotos: [],
 };
 
 const reducer = (state, action) => {
@@ -38,10 +40,17 @@ const reducer = (state, action) => {
       return { ...state, photosByTopic: action.payload };
 
     case "SET_APPLICATION_DATA":
-      return {...state, topicData: action.payload.topics, photoData: action.payload.photos};
+      return {
+        ...state,
+        topicData: action.payload.topics,
+        photoData: action.payload.photos,
+      };
 
     case "SET_TOPIC_PHOTOS":
-      return {...state, photoData:action.payload}
+      return { ...state, photoData: action.payload };
+
+    case "SEARCH_PHOTOS":
+      return { ...state, photoData: action.payload};
 
     default:
       return state;
@@ -68,12 +77,14 @@ const useApplicationData = () => {
   };
 
   const setApplicationData = (topics, photos) => {
-     dispatch({ type: "SET_APPLICATION_DATA", payload : {topics, photos}})
-  }
+    dispatch({ type: "SET_APPLICATION_DATA", payload: { topics, photos } });
+  };
   const setTopicPhotos = (topicPhotoData) => {
-    dispatch ({type: "SET_TOPIC_PHOTOS", payload : topicPhotoData})
-  }
-
+    dispatch({ type: "SET_TOPIC_PHOTOS", payload: topicPhotoData });
+  };
+  const searchPhotos = (photos) => {
+    dispatch({ type: "SEARCH_PHOTOS", payload: photos });
+  };
   return {
     state,
     updateToFavPhotoIds,
@@ -81,7 +92,8 @@ const useApplicationData = () => {
     onClosePhotoDetailsModal,
     onOpenPhotoDetailsModal,
     setApplicationData,
-    setTopicPhotos
+    setTopicPhotos,
+    searchPhotos
   };
 };
 

@@ -12,11 +12,12 @@ const HomeRoute = (props) => {
     handlePhotoClick,
     handleFavoriteToggle,
     favoritePhotos,
+    searchPhotos
   } = props;
 
   return (
     <div className="home-route">
-      <TopNavigation topics={topics} favoritePhotos={favoritePhotos} setTopicPhotos={setTopicPhotos} />
+      <TopNavigation topics={topics} favoritePhotos={favoritePhotos} setTopicPhotos={setTopicPhotos} searchPhotos={searchPhotos}  />
       <PhotoList
         photos={photos}
         onFavoriteToggle={handleFavoriteToggle}
