@@ -3,6 +3,7 @@ import React from "react";
 import "../styles/TopicList.scss";
 import TopicListItem from "./TopicListItem";
 
+  // Rendering a list of topics
 const TopicList = (props) => {
   const {topics, setTopicPhotos} = props
   return (

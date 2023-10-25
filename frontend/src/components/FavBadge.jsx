@@ -3,6 +3,7 @@ import FavIcon from './FavIcon';
 
 import '../styles/FavBadge.scss';
 
+// Component for rendering the favorite badge
 const FavBadge = ({hasFavorites}) => {
   return (
     <div className='fav-badge'>

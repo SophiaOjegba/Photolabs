@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 
+// Initial state for the application data
 const initialState = {
   favoritePhotos: [],
   selectedPhoto: false,
@@ -9,6 +10,7 @@ const initialState = {
   photosByTopic: [],
 };
 
+// Reducer function to handle state changes based on actions
 const reducer = (state, action) => {
   switch (action.type) {
     case "UPDATE_FAV_PHOTO_IDS":
@@ -48,6 +50,7 @@ const reducer = (state, action) => {
   }
 };
 
+// Custom hook for managing application data
 const useApplicationData = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -74,6 +77,7 @@ const useApplicationData = () => {
     dispatch ({type: "SET_TOPIC_PHOTOS", payload : topicPhotoData})
   }
 
+  // Returning the required state and functions from the hook
   return {
     state,
     updateToFavPhotoIds,

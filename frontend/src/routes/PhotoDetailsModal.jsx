@@ -4,6 +4,7 @@ import closeSymbol from "../assets/closeSymbol.svg";
 import PhotoList from "components/PhotoList";
 import FavIconButton from "components/FavIconButton";
 
+// Functional component for the PhotoDetailsModal
 const PhotoDetailsModal = (props) => {
   const { photoData, handleFavoriteToggle, favoritePhotos, handleCloseModal } =
     props;
@@ -16,7 +17,7 @@ const PhotoDetailsModal = (props) => {
    
       const isFavorite = favoritePhotos.includes(photoData.id)
     
-
+ // Returning the JSX structure for the PhotoDetailsModal component
   return (
     <div className="photo-details-modal">
       <button
@@ -27,11 +28,11 @@ const PhotoDetailsModal = (props) => {
       </button>
       {photoData ? (
         <div >
-          <FavIconButton
-            isFavorite={isFavorite}
-            onToggle={toggleFavorite}
-          />
           <div className="photo-details-modal__image">
+            <FavIconButton
+              isFavorite={isFavorite}
+              onToggle={toggleFavorite}
+            />
           <img
             src={photoData.urls.regular}
             className="photo-details-modal__image"

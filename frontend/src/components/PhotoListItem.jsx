@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/PhotoListItem.scss";
 import FavIconButton from "./FavIconButton";
 
+// Component for rendering a single photo item
 const PhotoListItem = (props) => {
   const { data, onFavoriteToggle, favoritePhotos, handlePhotoClick } = props;
   const { urls, user, location } = data;
@@ -18,6 +19,7 @@ const PhotoListItem = (props) => {
     }
   };
 
+  // Rendering the photo item
   return (
     <div className="photo-list__item">
       <FavIconButton isFavorite={isFavorited} onToggle={toggleFavorite} />

@@ -4,6 +4,7 @@ import "../styles/HomeRoute.scss";
 import TopNavigation from "components/TopNavigationBar";
 import PhotoList from "components/PhotoList";
 
+// Functional component for the HomeRoute
 const HomeRoute = (props) => {
   const {
     topics,
